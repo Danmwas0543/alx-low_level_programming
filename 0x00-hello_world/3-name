@@ -1,0 +1,2 @@
+#!/bin/bash
+gcc 3-name -o c is fun
