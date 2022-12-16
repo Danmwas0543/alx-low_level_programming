@@ -5,7 +5,6 @@
  *
  * @n: number of times to print \
  */
-
 void print_diagonal(int n)
 {
 	int i, j;
@@ -14,9 +13,9 @@ void print_diagonal(int n)
 	{
 		for (j = 1; j <= i; j++)
 		{
-			if (i >= 2 && j <= i -1)
+			if (i >= 2 && j <= i - 1)
 			{
-				_putchar( ' ' );
+				_putchar(' ');
 			}
 			else
 			{
