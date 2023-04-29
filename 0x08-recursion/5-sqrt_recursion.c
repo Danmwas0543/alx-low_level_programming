@@ -18,7 +18,7 @@ int _sqrt_recursion(int n)
 /**
  * actual_sqrt_recursion - reiterates to identify the natural
  * root of a given no.
- * @n: number which calculates  sqaure root 
+ * @n: number which calculates sqaure root
  * @i: counter
  *
  * Return: the resultant root
