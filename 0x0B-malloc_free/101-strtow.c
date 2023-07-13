@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * count_word -> supporting tool to count the words in the text
+ * count_word -> helper function to count the words in a string
  * @s: text being counted
  * return: no of texts
  */
