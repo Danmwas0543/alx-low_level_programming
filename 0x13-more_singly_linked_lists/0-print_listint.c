@@ -6,15 +6,15 @@
  * @b - head node of a linked list
  * Return - node's numbers
  */
-size_t print_listint(const listint_t *h);
+size_t print_listint(const listint_t *b)
 {
-size_t count = 0;
-while (b != NULL )
+size_t number = 0;
+while (b != NULL)
 {
-printf("%d\n",b->n);
+printf("%d\n", b->n);
 b = b->next;
-count++;
+number++;
 }
-return (count);
+return (number);
 }
 
