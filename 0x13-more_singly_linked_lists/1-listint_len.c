@@ -5,10 +5,10 @@
  * @b: head of a pointer
  * return: the amount of elements
  */
-size_t listint_len(const listint_t *h);
+size_t listint_len(const listint_t *b);
 {
 	size_t number = 0;
-	
+
 	while (b != NULL)
 	{
 		b = b->next;
