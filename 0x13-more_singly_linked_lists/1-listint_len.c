@@ -3,7 +3,7 @@
  * listint_t - elements in a linked list
  *
  * @b: head of a pointer
- * return: the amount of elements
+ * Return: the amount of elements
  */
 size_t listint_len(const listint_t *b);
 {
