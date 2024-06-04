@@ -13,7 +13,7 @@ clean:
 	${RM} *~ ${NAME}
 
 oclean:
-	${RM} ${NAME}
+	${RM} ${OBJ}
 
 fclean: clean oclean
 
