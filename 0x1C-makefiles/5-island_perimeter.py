@@ -4,6 +4,8 @@
 
 def island_perimeter(grid):
     """ returns perimeter """
+
+
     heit  = len(grid)
     wih = len(grid[0])
     siz = 0
