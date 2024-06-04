@@ -1,0 +1,7 @@
+#inserting variables in our makefile
+
+CC = gcc
+SRC = main.c school.c
+
+all:${SRC}
+	${CC} ${SRC} -o school
