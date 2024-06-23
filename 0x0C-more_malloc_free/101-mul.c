@@ -67,13 +67,13 @@ int main(int argc, char *argv[])
 	rst = malloc(sizeof(int) * ln);
 	if (!rst)
 		return (1);
-	for (j = 0; j<= ln1 + ln2; j++)
+	for (j = 0; j <= ln1 + ln2; j++)
 		rst[j] = 0;
 	for (ln1 = ln1 - 1; ln1 >= 0; ln1--)
 	{
 		dg1 = str1[ln1] - '0';
 		carry = 0;
-		for (ln2 = _strlen(str2) - 1; ln2 >= 0; ln2--)
+		for (ln2 = ln2 - 1; ln2 >= 0; ln2--)
 		{
 			dg2 = str2[ln2] - '0';
 			carry += rst[ln1 + ln2 + 1] + (dg1 * dg2);

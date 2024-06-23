@@ -12,4 +12,5 @@ int _putchar(char c);
 void *malloc_checked(unsigned int b);
 int _strlen(char *s);
 int is_digit(char *s);
+int _strln(char *s)
 #endif
