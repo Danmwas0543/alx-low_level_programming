@@ -42,7 +42,7 @@ int main(int danilo, char *dan[])
 	}
 
 	filef = open(dan[1], O_RDONLY);
-	fileo = open(dan[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0644);
+	fileo = open(dan[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	errof(filef, fileo, dan);
 
 	noofchars = 1024;
@@ -51,7 +51,7 @@ int main(int danilo, char *dan[])
 		noofchars = read(filef, wangui, 1024);
 		if (noofchars == -1)
 			errof(-1, 0, dan);
-		cvb = write(fileo, wangui, noofchars);
+		cvb = write(fileo, wangui, 1024);
 		if (cvb == -1)
 			errof(0, -1, dan);
 	}
