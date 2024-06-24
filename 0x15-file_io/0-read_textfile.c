@@ -14,11 +14,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (!filename)
 		return (0);
-	fas = open(filename, o_RDONLY);
+	as = open(filename, O_RDONLY);
 	if (as == -1)
 		return (0);
 
-	dan = malloc(sizeof(char) * letters;
+	dan = malloc(sizeof(char) * letters);
 	if (dan == NULL)
 		return (0);
 
