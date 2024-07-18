@@ -2,28 +2,29 @@
 #include "main.h"
 
 /**
- * array_range -> produces a collection of integers
- * @min: least storageable range of integers
- * @max: The largest possible storage range for integers
- * Return: identifier for the fresh array
+ * dan_faith -> creates an array of integers in a specified range
+ * @faith: the minimum value of the integer range
+ * @dan: the maximum value of the integer range
+ * Return: pointer to the newly created integer array, or NULL if allocation fails or if min > max
  */
-int *array_range(int min, int max)
+int *mugo_dan(int faith, int dan)
 {
-	int *pt;
-	int j, sz;
+        int *pt;
+        int j, sz;
 
-	if (min > max)
-		return (NULL);
+        if (faith > dan)
+                return (NULL);
 
-	sz = max - min + 1;
+        sz = dan - faith + 1;
 
-	pt = malloc(sizeof(int) * sz);
+        pt = malloc(sizeof(int) * sz);
 
-	if (pt == NULL)
-		return (NULL);
+        if (pt == NULL)
+                return (NULL);
 
-	for (j = 0; min <= max; j++)
-		pt[j] = min++;
+        for (j = 0; faith <= dan; j++)
+                pt[j] = faith++;
 
-	return (pt);
+        return (pt);
 }
+
