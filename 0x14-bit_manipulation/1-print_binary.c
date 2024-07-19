@@ -10,9 +10,9 @@ void print_nary(unsigned long int v)
 		return;
 	print_nary(v >> 1);
 	if ((v & 1) == 1)
-		_ptch('1');
+		_putchar('1');
 	if ((v & 1) == 0)
-		_ptch('0');
+		_putchar('0');
 }
 /**
  * print_binary - displays binary to standard output
@@ -21,7 +21,7 @@ void print_nary(unsigned long int v)
 void print_binary(unsigned long int n)
 {
 	if (n == 0)
-		_ptch('0');
+		_putchar('0');
 	else
 	{
 		print_nary(n);
