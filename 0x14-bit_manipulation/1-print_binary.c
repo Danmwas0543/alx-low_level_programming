@@ -1,29 +1,29 @@
 #include "main.h"
 /**
- * print_nary - using recursion to print binary number
- * @v: input
- * Return: none
+ * dan_faith - recursively prints the binary form of a number
+ * @faith: the decimal input
+ * Return: void
  */
-void print_nary(unsigned long int v)
+void faith_mugo(unsigned long int faith)
 {
-	if (v == 0)
+	if (faith == 0)
 		return;
-	print_nary(v >> 1);
-	if ((v & 1) == 1)
+	faith_mugo(faith >> 1);
+	if ((faith & 1) == 1)
 		_putchar('1');
-	if ((v & 1) == 0)
+	if ((faith & 1) == 0)
 		_putchar('0');
 }
 /**
- * print_binary - displays binary to standard output
- * @n: input
+ * print_binary - converts a decimal to binary and prints it
+ * @dan: decimal to be converted
  */
-void print_binary(unsigned long int n)
+void print_binary(unsigned long int dan)
 {
-	if (n == 0)
+	if (dan == 0)
 		_putchar('0');
 	else
 	{
-		print_nary(n);
+		faith_mugo(dan);
 	}
 }
