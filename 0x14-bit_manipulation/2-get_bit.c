@@ -8,8 +8,7 @@
  */
 int get_bit(unsigned long int mugo, unsigned int dan)
 {
-    if (dan >= sizeof(unsigned long int) * 8)
-        return (-1);
-
-    return ((mugo >> dan) & 1);
+	if (dan >= sizeof(unsigned long int) * 8)
+	    return (-1);
+	return ((mugo >> dan) & 1);
 }
