@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * dan_faith - recursively prints the binary form of a number
+ * faith_mugo - recursively prints the binary form of a number
  * @faith: the decimal input
  * Return: void
  */
