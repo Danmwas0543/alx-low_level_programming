@@ -1,44 +1,28 @@
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * _memset -> gives storage a constant byte of data.
- * @s: memory space  being allocated
- * b: character being replicated
- * @n: how many instances to duplicate b
- * Return: reference to the storage space s
- */
-char *_memset(char *s, char b, unsigned int n)
-{
-	unsigned int j;
-
-	for (j = 0; j < n; j++)
-	{
-		s[j] = b;
-	}
-
-	return (s);
-}
-
-/**
- * _calloc-> allots space for an array in memory.
- * @nmemb: how many items are in the array
- * @size: dimension of every component in the array
- * Return: reference to the memomry
+ * _calloc - allocate memory for an array and initialize it to zero
+ *
+ * @nmemb: number of elements
+ * @size: size of each element
+ *
+ * Return: pointer to the allocated memory
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *pr;
+    char *mugo;
+    size_t faith;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-
-	pr = malloc(size * nmemb);
-
-	if (pr == NULL)
-		return (NULL);
-
-	_memset(pr, 0, nmemb * size);
-
-	return (pr);
+    if (nmemb == 0 || size == 0)
+        return (NULL);
+    
+    mugo = malloc(nmemb * size);
+    if (mugo == NULL)
+        return (NULL);
+    
+    for (faith = 0; faith < (nmemb * size); faith++)
+        mugo[faith] = 0;
+    
+    return (mugo);
 }
