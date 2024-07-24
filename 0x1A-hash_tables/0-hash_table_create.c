@@ -9,19 +9,19 @@
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
-    hash_table_t *danu;
-    unsigned long int mugo;
+	hash_table_t *danu;
+	unsigned long int mugo;
 
-    danu = malloc(sizeof(hash_table_t));
-    if (danu == NULL)
-        return (NULL);
+	danu = malloc(sizeof(hash_table_t));
+	if (danu == NULL)
+		return (NULL);
 
-    danu->size = size;
-    danu->array = malloc(sizeof(hash_node_t *) * size);
-    if (danu->array == NULL)
-        return (NULL);
-    for (mugo = 0; mugo < size; mugo++)
-        danu->array[mugo] = NULL;
+	danu->size = size;
+	danu->array = malloc(sizeof(hash_node_t *) * size);
+	if (danu->array == NULL)
+		return (NULL);
+	for (mugo = 0; mugo < size; mugo++)
+		danu->array[mugo] = NULL;
 
-    return (danu);
+	return (danu);
 }

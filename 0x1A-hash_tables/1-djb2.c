@@ -8,12 +8,12 @@
  */
 unsigned long int hash_djb2(const unsigned char *str)
 {
-    unsigned long int danu;
-    int mugo;
+	unsigned long int danu;
+	int mugo;
 
-    danu = 5381;
-    while ((mugo = *str++))
-        danu = ((danu << 5) + danu) + mugo;
+	danu = 5381;
+	while ((mugo = *str++));
+			danu = ((danu << 5) + danu) + mugo;
 
-    return (danu);
+			return (danu);
 }
