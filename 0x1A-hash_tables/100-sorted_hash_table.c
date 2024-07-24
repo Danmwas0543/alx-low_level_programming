@@ -9,26 +9,26 @@
  */
 shash_table_t *shash_table_create(unsigned long int size)
 {
-    shash_table_t *danu;
-    unsigned long int faith;
+	shash_table_t *danu;
+	unsigned long int faith;
 
-    danu = malloc(sizeof(shash_table_t));
-    if (danu == NULL)
-        return (NULL);
+	danu = malloc(sizeof(shash_table_t));
+	if (danu == NULL)
+		return (NULL);
 
-    danu->size = size;
-    danu->array = malloc(sizeof(shash_node_t *) * size);
-    if (danu->array == NULL)
-    {
-        free(danu);
-        return (NULL);
-    }
-    for (faith = 0; faith < size; faith++)
-        danu->array[faith] = NULL;
-    danu->shead = NULL;
-    danu->stail = NULL;
+	danu->size = size;
+	danu->array = malloc(sizeof(shash_node_t *) * size);
+	if (danu->array == NULL)
+	{
+		free(danu);
+		return (NULL);
+	}
+	for (faith = 0; faith < size; faith++)
+		danu->array[faith] = NULL;
+	danu->shead = NULL;
+	danu->stail = NULL;
 
-    return (danu);
+	return (danu);
 }
 
 /**
@@ -42,46 +42,46 @@ shash_table_t *shash_table_create(unsigned long int size)
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
-    shash_node_t *mugo, *faith;
-    char *value_copy;
-    unsigned long int index;
+	shash_node_t *mugo, *faith;
+	char *value_copy;
+	unsigned long int index;
 
-    if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
-        return (0);
+	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
+		return (0);
 
-    value_copy = strdup(value);
-    if (value_copy == NULL)
-        return (0);
+	value_copy = strdup(value);
+	if (value_copy == NULL)
+		return (0);
 
-    index = key_index((const unsigned char *)key, ht->size);
-    faith = ht->shead;
-    while (faith)
-    {
-        if (strcmp(faith->key, key) == 0)
-        {
-            free(faith->value);
-            faith->value = value_copy;
-            return (1);
-        }
-        faith = faith->snext;
-    }
+	index = key_index((const unsigned char *)key, ht->size);
+	faith = ht->shead;
+	while (faith)
+	{
+		if (strcmp(faith->key, key) == 0)
+		{
+			free(faith->value);
+			faith->value = value_copy;
+			return (1);
+		}
+		faith = faith->snext;
+	}
 
-    mugo = malloc(sizeof(shash_node_t));
-    if (mugo == NULL)
-    {
-        free(value_copy);
-        return (0);
-    }
-    mugo->key = strdup(key);
-    if (mugo->key == NULL)
-    {
-        free(value_copy);
-        free(mugo);
-        return (0);
-    }
-    mugo->value = value_copy;
-    mugo->next = ht->array[index];
-    ht->array[index] = mugo;
+	mugo = malloc(sizeof(shash_node_t));
+	if (mugo == NULL)
+	{
+		free(value_copy);
+		return (0);
+	}
+	mugo->key = strdup(key);
+	if (mugo->key == NULL)
+	{
+		free(value_copy);
+		free(mugo);
+		return (0);
+	}
+	mugo->value = value_copy;
+	mugo->next = ht->array[index];
+	ht->array[index] = mugo;
 
     if (ht->shead == NULL)
     {
